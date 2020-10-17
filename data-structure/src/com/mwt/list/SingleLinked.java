@@ -1,5 +1,8 @@
 package com.mwt.list;
 
+/**
+ * 数据结构：单向连表
+ */
 public class SingleLinked implements Linked {
 
     private Node head;

@@ -1,5 +1,9 @@
 package com.mwt.list;
 
+/**
+ * 数据结构：双向连表
+ * 和单向连表相比，支持从尾元素开始查询
+ */
 public class DulLinked implements Linked {
     private Node head;
     private Node tail;
@@ -78,6 +82,13 @@ public class DulLinked implements Linked {
         return getNode(index, head).data;
     }
 
+    /**
+     * 根据方向获取node
+     *
+     * @param index node 下标
+     * @param head  是否从头开始获取元素
+     * @return index下标对应的node
+     */
     private Node getNode(int index, boolean head) {
         checkIndex(index);
         Node p;
