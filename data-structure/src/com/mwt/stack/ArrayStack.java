@@ -32,12 +32,6 @@ public class ArrayStack implements Stack {
         stack = new Object[DEFAULT_SIZE];
     }
 
-    /**
-     * 向栈添加元素
-     *
-     * @param o
-     * @return
-     */
     @Override
     public Object add(Object o) {
         if (top > MAX_SIZE - 1) {
@@ -51,11 +45,6 @@ public class ArrayStack implements Stack {
         return o;
     }
 
-    /**
-     * 弹出一个元素并删除
-     *
-     * @return
-     */
     @Override
     public Object pop() {
         Object data;
@@ -68,11 +57,6 @@ public class ArrayStack implements Stack {
         return data;
     }
 
-    /**
-     * 获取栈中元素量
-     *
-     * @return
-     */
     @Override
     public int getSize() {
         return top + 1;
