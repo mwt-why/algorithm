@@ -89,6 +89,29 @@ public class Test {
         mGet(linked);
     }
 
+    public static void containsAndIndexOf() {
+        Linked linked = new SingleLinked();
+        linked.add(1);
+        linked.add(2);
+        linked.add(3);
+        linked.add(4);
+        System.out.println("contains NO 4: " + linked.contains(6));
+        System.out.println(linked.indexOf(3));
+    }
+
+    public static void mContainsAndIndexOf(){
+        DulLinked linked = new DulLinked();
+        linked.add(1);
+        linked.add(2);
+        linked.add(3);
+        linked.add(4);
+        linked.add(3);
+        linked.add(5);
+        System.out.println("contains NO 4: " + linked.contains(4));
+        System.out.println("pre NO 3: "+linked.indexOf(3));
+        System.out.println("suf NO 3: "+linked.indexOf(3,false));
+    }
+
     public static void main(String[] args) {
 //        add();
 //        get(add());
@@ -99,7 +122,8 @@ public class Test {
 //        mSet();
 //        mSize();
 //        mSet();
-        mDelete();
+//        mDelete();
+        mContainsAndIndexOf();
     }
 
 }

@@ -114,6 +114,45 @@ public class DulLinked implements Linked {
         return size;
     }
 
+    @Override
+    public boolean contains(Object o) {
+        return indexOf(o) != -1;
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        return indexOf(o, true);
+    }
+
+    public int indexOf(Object o, boolean head) {
+        Node h = this.head.next;
+        Node t = this.tail.pre;
+        int index = 0;
+        if (head) {
+            while (true) {
+                if (h.data == o) {
+                    return index;
+                }
+                if (h.next == null) {
+                    return -1;
+                }
+                h = h.next;
+                index++;
+            }
+        } else {
+            while (true) {
+                if (t.data == o) {
+                    return ((size - 1) - index);
+                }
+                if (t.pre == null) {
+                    return -1;
+                }
+                t = t.pre;
+                index++;
+            }
+        }
+    }
+
     private void checkIndex(int index) {
         if (index > size - 1) {
             throw new RuntimeException("下标越界");

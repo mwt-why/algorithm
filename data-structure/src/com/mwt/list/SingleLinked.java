@@ -88,6 +88,27 @@ public class SingleLinked implements Linked {
         return size;
     }
 
+    @Override
+    public boolean contains(Object o) {
+        return indexOf(o) != -1;
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        Node p = head.next;
+        int index = 0;
+        while (true) {
+            if (p.data == o) {
+                return index;
+            }
+            if (p.next == null) {
+                return -1;
+            }
+            p = p.next;
+            index++;
+        }
+    }
+
     private void checkIndex(int index) {
         if (index > size - 1) {
             throw new RuntimeException("下标越界");
