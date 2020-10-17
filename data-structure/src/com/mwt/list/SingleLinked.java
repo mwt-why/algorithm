@@ -10,7 +10,7 @@ public class SingleLinked implements Linked {
         size = 0;
     }
 
-    class Node {
+    private class Node {
         Object data;
         Node next;
 
@@ -19,14 +19,6 @@ public class SingleLinked implements Linked {
         }
 
         public Node() {
-        }
-
-        public void setData(Object data) {
-            this.data = data;
-        }
-
-        public Object getData() {
-            return data;
         }
     }
 
@@ -67,37 +59,29 @@ public class SingleLinked implements Linked {
     public Object set(int index, Object o) {
         checkIndex(index);
         Object oldData;
-        if (index == 0) {
-            oldData = head.next.getData();
-            head.next.setData(o);
-            return oldData;
-        }
         Node p = head;
         while (index >= 0) {
             p = p.next;
             index--;
         }
-        oldData = p.getData();
-        p.setData(o);
+        oldData = p.data;
+        p.data = o;
         return oldData;
     }
 
     @Override
     public Object get(int index) {
         checkIndex(index);
-        if (index == 0) {
-            return head.next.getData();
-        }
         Node p = head;
         while (index >= 0) {
             p = p.next;
             index--;
         }
-        return p.getData();
+        return p.data;
     }
 
     @Override
-    public int getSize() {
+    public int size() {
         return size;
     }
 

@@ -9,5 +9,5 @@ public interface Linked {
 
     Object get(int index);
 
-    int getSize();
+    int size();
 }
