@@ -8,8 +8,8 @@ public class Test {
         topTest();
     }
 
-    public static Stack addTest() {
-        Stack stack = new Stack();
+    public static ArrayStack addTest() {
+        ArrayStack stack = new ArrayStack();
         for (int i = 0; i < 50; i++) {
             stack.add(i);
         }
@@ -18,19 +18,19 @@ public class Test {
     }
 
     public static void getSizeTest() {
-        Stack stack = addTest();
+        ArrayStack stack = addTest();
         System.out.println(stack.getSize());
     }
 
     public static void popTest() {
-        Stack stack = addTest();
+        ArrayStack stack = addTest();
         for (int i = 0; i < 51; i++) {
             System.out.println(stack.pop());
         }
     }
 
     public static void topTest() {
-        Stack stack = addTest();
+        ArrayStack stack = addTest();
         System.out.println(stack.top());
     }
 }
