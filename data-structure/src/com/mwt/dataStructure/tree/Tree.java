@@ -1,11 +1,11 @@
 package com.mwt.dataStructure.tree;
 
 public interface Tree {
-    Object add(Object o);
+    Object add(Object key, Object value);
 
-    Object delete(String key);
+    Object delete(Object key);
 
-    Object set(String key, Object o);
+    Object set(Object key, Object value);
 
-    Object get(String key);
+    Object get(Object key);
 }
